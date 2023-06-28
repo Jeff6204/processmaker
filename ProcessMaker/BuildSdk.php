@@ -10,7 +10,7 @@ use ProcessMaker\Facades\Docker;
 class BuildSdk {
     private $debug = true;
     private $image = "openapitools/openapi-generator-cli";
-    private $tag = "v4.2.2";
+    private $tag = "v5.1.1";
     private $lang = null;
     private $outputPath = null;
     private $jsonPath = null;
@@ -90,7 +90,7 @@ class BuildSdk {
         }
         return $this->runCmd(Docker::command().' run ' . $this->imageWithTag() . ' config-help -g ' . $this->lang);
     }
-    
+
     public function getAvailableLanguages()
     {
         $result = $this->runCmd(Docker::command().' run ' . $this->imageWithTag() . ' list -s');
@@ -178,7 +178,7 @@ class BuildSdk {
             if ($this->userId) {
                 event(new BuildScriptExecutor($line, $this->userId, 'running'));
             }
-            
+
             $output .= $line;
         }
 
@@ -186,7 +186,7 @@ class BuildSdk {
         fclose($pipes[1]);
         fclose($pipes[2]);
         $returnVal = proc_close($process);
-        
+
         if ($returnVal) {
             $this->stopContainer();
 
@@ -214,7 +214,7 @@ class BuildSdk {
         if ($this->lang === 'lua') {
             $this->runCmd("find {$folder} -name '*.lua' -exec sed -i -E 's/(req\.readers:upsert.*)/-- \\1/g' {} \;");
         }
-        
+
         if ($this->lang === 'python') {
             // Replace \User with \\User since slash \U is unicode in python. Major slashitis.
             $this->runCmd(
@@ -244,7 +244,7 @@ class BuildSdk {
         $deps->appendChild($dep);
         file_put_contents($file, $dom->saveXml());
     }
-    
+
     private function removeDateTime($folder)
     {
         if ($this->lang === 'csharp') {

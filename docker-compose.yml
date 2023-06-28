@@ -1,0 +1,51 @@
+version: '3'
+services:
+
+  #PHP Service
+  app:
+    build: .
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+      PM_APP_URL: http://localhost
+      PM_APP_PORT: 8080
+      PM_BROADCASTER_PORT: 6004
+    volumes:
+      - ./:/var/www/html/
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - mysql
+      - redis
+  #Nginx Service
+  webserver:
+    image: nginx:alpine
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ./:/var/www/html/
+      - ./nginx/:/etc/nginx/conf.d/
+    ports:
+      - "8080:80"
+      - "6004:6001"
+      - "443:443"
+  #redis
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+  #MySQL Service
+  mysql:
+    image: mysql:5.7
+    restart: unless-stopped
+    tty: true
+    platform: linux/amd64  # for MacBook m1
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: processmaker
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: pm
+      MYSQL_PASSWORD: pass

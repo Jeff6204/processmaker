@@ -24,6 +24,7 @@
                     "CssSettings"
                 ],
                 "summary": "Create or update a new setting",
+                "description": "Create a new Settings css-override",
                 "operationId": "updateCssSetting",
                 "requestBody": {
                     "required": true,
@@ -32,11 +33,9 @@
                             "schema": {
                                 "properties": {
                                     "variables": {
-                                        "description": "Create a new Settings css-override",
                                         "type": "string"
                                     },
                                     "sansSerifFont": {
-                                        "description": "Create a new Settings css-override",
                                         "type": "string"
                                     }
                                 },
@@ -65,6 +64,7 @@
                     "Environment Variables"
                 ],
                 "summary": "Returns all environmentVariables that the user has access to. For security, values are not included.",
+                "description": "Fetch a collection of variables based on paged request and filter if provided",
                 "operationId": "getEnvironmentVariables",
                 "parameters": [
                     {
@@ -91,14 +91,12 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Fetch a collection of variables based on paged request and filter if provided",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/EnvironmentVariable"
                                             }
                                         },
                                         "meta": {
-                                            "description": "Fetch a collection of variables based on paged request and filter if provided",
                                             "type": "object"
                                         }
                                     },
@@ -114,6 +112,7 @@
                     "Environment Variables"
                 ],
                 "summary": "Create a new environment variable",
+                "description": "Creates a new global Environment Variable in the system",
                 "operationId": "createEnvironmentVariable",
                 "requestBody": {
                     "required": true,
@@ -145,6 +144,7 @@
                     "Environment Variables"
                 ],
                 "summary": "Get an environment variable by id. For security, the value is not included.",
+                "description": "Return an environment variable instance\nUsing implicit model binding, will automatically return 404 if variable now found",
                 "operationId": "getEnvironmentVariableById",
                 "parameters": [
                     {
@@ -175,6 +175,7 @@
                     "Environment Variables"
                 ],
                 "summary": "Update an environment variable",
+                "description": "Update an environment variable",
                 "operationId": "updateEnvironmentVariable",
                 "parameters": [
                     {
@@ -240,6 +241,7 @@
                     "Files"
                 ],
                 "summary": "Returns the list of files",
+                "description": "Display a listing of the resource.",
                 "operationId": "getFiles",
                 "parameters": [
                     {
@@ -263,7 +265,6 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Display a listing of the resource.",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/media"
@@ -285,6 +286,7 @@
                     "Files"
                 ],
                 "summary": "Save a new media file. Note: To upload files to a request, use createRequestFile in the RequestFile API",
+                "description": "Store a newly created resource in storage.",
                 "operationId": "createFile",
                 "parameters": [
                     {
@@ -349,19 +351,15 @@
                                 "schema": {
                                     "properties": {
                                         "id": {
-                                            "description": "Store a newly created resource in storage.",
                                             "type": "string"
                                         },
                                         "model_id": {
-                                            "description": "Store a newly created resource in storage.",
                                             "type": "string"
                                         },
                                         "file_name": {
-                                            "description": "Store a newly created resource in storage.",
                                             "type": "string"
                                         },
                                         "mime_type": {
-                                            "description": "Store a newly created resource in storage.",
                                             "type": "string"
                                         }
                                     },
@@ -379,6 +377,7 @@
                     "Files"
                 ],
                 "summary": "Get the metadata of a file. To actually fetch the file see Get File Contents",
+                "description": "Get a single media file.",
                 "operationId": "getFileById",
                 "parameters": [
                     {
@@ -412,6 +411,7 @@
                     "Files"
                 ],
                 "summary": "Delete a media file",
+                "description": "Remove the specified resource from storage.",
                 "operationId": "deleteFile",
                 "parameters": [
                     {
@@ -440,6 +440,7 @@
                     "Files"
                 ],
                 "summary": "Get the contents of a file",
+                "description": "Display the specified resource.",
                 "operationId": "getFileContentsById",
                 "parameters": [
                     {
@@ -476,6 +477,7 @@
                     "Groups"
                 ],
                 "summary": "Returns all groups that the user has access to",
+                "description": "Display a listing of the resource.",
                 "operationId": "getGroups",
                 "parameters": [
                     {
@@ -505,7 +507,6 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Display a listing of the resource.",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/groups"
@@ -527,6 +528,7 @@
                     "Groups"
                 ],
                 "summary": "Save a new group",
+                "description": "Store a newly created resource in storage.",
                 "operationId": "createGroup",
                 "requestBody": {
                     "required": true,
@@ -561,6 +563,7 @@
                     "Groups"
                 ],
                 "summary": "Get single group by ID",
+                "description": "Display the specified resource.",
                 "operationId": "getGroupById",
                 "parameters": [
                     {
@@ -594,6 +597,7 @@
                     "Groups"
                 ],
                 "summary": "Update a group",
+                "description": "Update a user",
                 "operationId": "updateGroup",
                 "parameters": [
                     {
@@ -630,6 +634,7 @@
                     "Groups"
                 ],
                 "summary": "Delete a group",
+                "description": "Delete a user",
                 "operationId": "deleteGroup",
                 "parameters": [
                     {
@@ -658,6 +663,7 @@
                     "Groups"
                 ],
                 "summary": "Returns all users of a group",
+                "description": "Display the list of users in a group",
                 "operationId": "getGroupUsers",
                 "parameters": [
                     {
@@ -687,7 +693,6 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Display the list of users in a group",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/users"
@@ -711,6 +716,7 @@
                     "Group Members"
                 ],
                 "summary": "Returns all groups for a given member",
+                "description": "Display a listing of the resource.",
                 "operationId": "getGroupMembers",
                 "parameters": [
                     {
@@ -734,7 +740,6 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Display a listing of the resource.",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/groupMembers"
@@ -756,6 +761,7 @@
                     "Group Members"
                 ],
                 "summary": "Save a new group member",
+                "description": "Store a newly created resource in storage.",
                 "operationId": "createGroupMember",
                 "requestBody": {
                     "required": true,
@@ -787,6 +793,7 @@
                     "Group Members"
                 ],
                 "summary": "Get single group member by ID",
+                "description": "Display the specified resource.",
                 "operationId": "getGroupMemberById",
                 "parameters": [
                     {
@@ -817,6 +824,7 @@
                     "Group Members"
                 ],
                 "summary": "Delete a group member",
+                "description": "Delete a group membership",
                 "operationId": "deleteGroupMember",
                 "parameters": [
                     {
@@ -842,6 +850,7 @@
                     "Group Members"
                 ],
                 "summary": "Returns all groups available for a given member",
+                "description": "Display a listing of groups available",
                 "operationId": "getGroupMembersAvailable",
                 "parameters": [
                     {
@@ -883,7 +892,6 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Display a listing of groups available",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/availableGroupMembers"
@@ -907,6 +915,7 @@
                     "Group Members"
                 ],
                 "summary": "Returns all users available for a given group",
+                "description": "Display a listing of users available",
                 "operationId": "getUserMembersAvailable",
                 "parameters": [
                     {
@@ -944,7 +953,6 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Display a listing of users available",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/users"
@@ -968,6 +976,7 @@
                     "Notifications"
                 ],
                 "summary": "Returns all notifications that the user has access to",
+                "description": "Display a listing of the resource.",
                 "operationId": "getNotifications",
                 "parameters": [
                     {
@@ -1003,15 +1012,12 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Display a listing of the resource.",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/Notification"
                                             }
                                         },
-                                        "meta": {
-                                            "description": "Display a listing of the resource."
-                                        }
+                                        "meta": {}
                                     },
                                     "type": "object"
                                 }
@@ -1025,6 +1031,7 @@
                     "Notifications"
                 ],
                 "summary": "Save a new notifications",
+                "description": "Store a newly created resource in storage.",
                 "operationId": "createNotification",
                 "requestBody": {
                     "required": true,
@@ -1056,6 +1063,7 @@
                     "Notifications"
                 ],
                 "summary": "Get single notification by ID",
+                "description": "Display the specified resource.",
                 "operationId": "getNotificationById",
                 "parameters": [
                     {
@@ -1086,6 +1094,7 @@
                     "Notifications"
                 ],
                 "summary": "Update a notification",
+                "description": "Update a user",
                 "operationId": "updateNotification",
                 "parameters": [
                     {
@@ -1119,6 +1128,7 @@
                     "Notifications"
                 ],
                 "summary": "Delete a notification",
+                "description": "Delete a notification",
                 "operationId": "deleteNotification",
                 "parameters": [
                     {
@@ -1144,6 +1154,7 @@
                     "Notifications"
                 ],
                 "summary": "Mark notifications as read by the user",
+                "description": "Update notification as read",
                 "operationId": "markNotificationAsRead",
                 "requestBody": {
                     "required": true,
@@ -1184,6 +1195,7 @@
                     "Notifications"
                 ],
                 "summary": "Mark notifications as unread by the user",
+                "description": "Update notifications as unread",
                 "operationId": "markNotificationAsUnread",
                 "requestBody": {
                     "required": true,
@@ -1224,6 +1236,7 @@
                     "Notifications"
                 ],
                 "summary": "Mark notifications as read by id and type",
+                "description": "Update all notification as read.",
                 "operationId": "markAllAsRead",
                 "requestBody": {
                     "required": true,
@@ -1233,17 +1246,11 @@
                                 "properties": {
                                     "id": {
                                         "description": "Polymorphic relation id",
-                                        "type": "integer",
-                                        "items": {
-                                            "type": "integer"
-                                        }
+                                        "type": "integer"
                                     },
                                     "type": {
                                         "description": "Polymorphic relation type",
-                                        "type": "string",
-                                        "items": {
-                                            "type": "string"
-                                        }
+                                        "type": "string"
                                     }
                                 },
                                 "type": "object"
@@ -1263,8 +1270,9 @@
                 "tags": [
                     "Permissions"
                 ],
-                "summary": "Update the permissions of an user",
-                "operationId": "ProcessMaker\\Http\\Controllers\\Api\\PermissionController::update",
+                "summary": "Update the permissions of a user",
+                "description": "Update permissions",
+                "operationId": "51b3555fb753f44324bf5c3880e01454",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -1272,15 +1280,19 @@
                             "schema": {
                                 "properties": {
                                     "user_id": {
-                                        "description": "Id of the user whose permissions are configured",
+                                        "description": "ID of the user whose permissions are configured",
                                         "type": "integer"
                                     },
                                     "group_id": {
-                                        "description": "Id of the group whose permissions are configured",
+                                        "description": "ID of the group whose permissions are configured",
                                         "type": "integer"
                                     },
+                                    "is_administrator": {
+                                        "description": "Whether the user should have Super Admin privileges",
+                                        "type": "boolean",
+                                        "default": false
+                                    },
                                     "permission_names": {
-                                        "description": "Update permissions",
                                         "type": "array",
                                         "items": {
                                             "type": "string"
@@ -1305,6 +1317,7 @@
                     "Process Categories"
                 ],
                 "summary": "Returns all processes categories that the user has access to",
+                "description": "Display a listing of the Process Categories.",
                 "operationId": "getProcessCategories",
                 "parameters": [
                     {
@@ -1333,14 +1346,12 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Display a listing of the Process Categories.",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/ProcessCategory"
                                             }
                                         },
                                         "meta": {
-                                            "description": "Display a listing of the Process Categories.",
                                             "type": "object"
                                         }
                                     },
@@ -1356,6 +1367,7 @@
                     "Process Categories"
                 ],
                 "summary": "Save a new process Category",
+                "description": "Store a newly created Process Category in storage",
                 "operationId": "createProcessCategory",
                 "requestBody": {
                     "required": true,
@@ -1387,6 +1399,7 @@
                     "Process Categories"
                 ],
                 "summary": "Get single process category by ID",
+                "description": "Display the specified Process category.",
                 "operationId": "getProcessCategoryById",
                 "parameters": [
                     {
@@ -1417,6 +1430,7 @@
                     "Process Categories"
                 ],
                 "summary": "Update a process Category",
+                "description": "Updates the current element",
                 "operationId": "updateProcessCategory",
                 "parameters": [
                     {
@@ -1457,6 +1471,7 @@
                     "Process Categories"
                 ],
                 "summary": "Delete a process category",
+                "description": "Remove the specified resource from storage.",
                 "operationId": "deleteProcessCategory",
                 "parameters": [
                     {
@@ -1489,6 +1504,7 @@
                     "Processes"
                 ],
                 "summary": "Returns all processes that the user has access to",
+                "description": "Get list Process",
                 "operationId": "getProcesses",
                 "parameters": [
                     {
@@ -1518,7 +1534,6 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Get list Process",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/Process"
@@ -1540,6 +1555,7 @@
                     "Processes"
                 ],
                 "summary": "Save a new process",
+                "description": "Store a newly created resource in storage.",
                 "operationId": "createProcess",
                 "requestBody": {
                     "required": true,
@@ -1571,6 +1587,7 @@
                     "Processes"
                 ],
                 "summary": "Get single process by ID",
+                "description": "Display the specified resource.",
                 "operationId": "getProcessById",
                 "parameters": [
                     {
@@ -1604,6 +1621,7 @@
                     "Processes"
                 ],
                 "summary": "Update a process",
+                "description": "Updates the current element",
                 "operationId": "updateProcess",
                 "parameters": [
                     {
@@ -1644,6 +1662,7 @@
                     "Processes"
                 ],
                 "summary": "Delete a process",
+                "description": "Remove the specified resource from storage.",
                 "operationId": "deleteProcess",
                 "parameters": [
                     {
@@ -1669,6 +1688,7 @@
                     "Processes"
                 ],
                 "summary": "Returns the list of processes that the user can start",
+                "description": "Returns the list of processes that the user can start.",
                 "operationId": "startProcesses",
                 "parameters": [
                     {
@@ -1695,7 +1715,6 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Returns the list of processes that the user can start.",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/ProcessWithStartEvents"
@@ -1719,6 +1738,7 @@
                     "Processes"
                 ],
                 "summary": "Restore an inactive process",
+                "description": "Reverses the soft delete of the element",
                 "operationId": "restoreProcess",
                 "parameters": [
                     {
@@ -1751,6 +1771,7 @@
                     "Processes"
                 ],
                 "summary": "Export a single process by ID and return a URL to download it",
+                "description": "Export the specified process.",
                 "operationId": "exportProcess",
                 "parameters": [
                     {
@@ -1771,7 +1792,6 @@
                                 "schema": {
                                     "properties": {
                                         "url": {
-                                            "description": "Export the specified process.",
                                             "type": "string"
                                         }
                                     },
@@ -1789,6 +1809,7 @@
                     "Processes"
                 ],
                 "summary": "Import a new process",
+                "description": "Import the specified process.",
                 "operationId": "importProcess",
                 "requestBody": {
                     "required": true,
@@ -1827,7 +1848,8 @@
                     "Processes"
                 ],
                 "summary": "Check if the import is ready",
-                "operationId": "ProcessMaker\\Http\\Controllers\\Api\\ProcessController::import_ready",
+                "description": "Check if the import is ready",
+                "operationId": "6a131993b7c879ddcd3d3a291dd8380f",
                 "parameters": [
                     {
                         "name": "code",
@@ -1847,7 +1869,6 @@
                                 "schema": {
                                     "properties": {
                                         "ready": {
-                                            "description": "Check if the import is ready",
                                             "type": "boolean"
                                         }
                                     },
@@ -1865,6 +1886,7 @@
                     "Processes"
                 ],
                 "summary": "Update assignments after import",
+                "description": "Import Assignments of process.",
                 "operationId": "assignmentProcess",
                 "parameters": [
                     {
@@ -1900,6 +1922,7 @@
                     "Processes"
                 ],
                 "summary": "Start a new process",
+                "description": "Trigger an start event within a process.",
                 "operationId": "triggerStartEvent",
                 "parameters": [
                     {
@@ -1952,6 +1975,7 @@
                     "Process Requests"
                 ],
                 "summary": "Returns all process Requests that the user has access to",
+                "description": "Display a listing of the resource.",
                 "operationId": "getProcessesRequests",
                 "parameters": [
                     {
@@ -1993,7 +2017,6 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Display a listing of the resource.",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/processRequest"
@@ -2017,6 +2040,7 @@
                     "Process Requests"
                 ],
                 "summary": "Get single process request by ID",
+                "description": "Display the specified resource.",
                 "operationId": "getProcessRequestById",
                 "parameters": [
                     {
@@ -2053,6 +2077,7 @@
                     "Process Requests"
                 ],
                 "summary": "Update a process request",
+                "description": "Update a request",
                 "operationId": "updateProcessRequest",
                 "parameters": [
                     {
@@ -2089,6 +2114,7 @@
                     "Process Requests"
                 ],
                 "summary": "Delete a process request",
+                "description": "Delete a request",
                 "operationId": "deleteProcessRequest",
                 "parameters": [
                     {
@@ -2124,6 +2150,7 @@
                     "Process Requests"
                 ],
                 "summary": "Update a process request event",
+                "description": "Trigger a intermediate catch event",
                 "operationId": "updateProcessRequestEvent",
                 "parameters": [
                     {
@@ -2158,6 +2185,7 @@
                     "Request Files"
                 ],
                 "summary": "Returns the list of files associated with a request",
+                "description": "Display a listing of the resource.",
                 "operationId": "getRequestFiles",
                 "parameters": [
                     {
@@ -2190,14 +2218,12 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Display a listing of the resource.",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/media"
                                             }
                                         },
                                         "meta": {
-                                            "description": "Display a listing of the resource.",
                                             "type": "object",
                                             "allOf": [
                                                 {
@@ -2218,6 +2244,7 @@
                     "Request Files"
                 ],
                 "summary": "Save a new media file to a request",
+                "description": "Store a newly created resource in storage.",
                 "operationId": "createRequestFile",
                 "parameters": [
                     {
@@ -2264,11 +2291,9 @@
                                 "schema": {
                                     "properties": {
                                         "message": {
-                                            "description": "Store a newly created resource in storage.",
                                             "type": "string"
                                         },
                                         "fileUploadId": {
-                                            "description": "Store a newly created resource in storage.",
                                             "type": "integer"
                                         }
                                     },
@@ -2286,6 +2311,7 @@
                     "Request Files"
                 ],
                 "summary": "Get a file uploaded to a request",
+                "description": "Display the specified resource.",
                 "operationId": "getRequestFilesById",
                 "parameters": [
                     {
@@ -2329,6 +2355,7 @@
                     "Request Files"
                 ],
                 "summary": "Delete all media associated with a request",
+                "description": "Remove the specified resource from storage.",
                 "operationId": "deleteRequestFile",
                 "parameters": [
                     {
@@ -2366,6 +2393,7 @@
                     "Screen Categories"
                 ],
                 "summary": "Returns all screens categories that the user has access to",
+                "description": "Display a listing of the Screen Categories.",
                 "operationId": "getScreenCategories",
                 "parameters": [
                     {
@@ -2394,14 +2422,12 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Display a listing of the Screen Categories.",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/ScreenCategory"
                                             }
                                         },
                                         "meta": {
-                                            "description": "Display a listing of the Screen Categories.",
                                             "type": "object"
                                         }
                                     },
@@ -2417,6 +2443,7 @@
                     "Screen Categories"
                 ],
                 "summary": "Save a new Screen Category",
+                "description": "Store a newly created Screen Category in storage",
                 "operationId": "createScreenCategory",
                 "requestBody": {
                     "required": true,
@@ -2448,6 +2475,7 @@
                     "Screen Categories"
                 ],
                 "summary": "Get single screen category by ID",
+                "description": "Display the specified screen category.",
                 "operationId": "getScreenCategoryById",
                 "parameters": [
                     {
@@ -2478,6 +2506,7 @@
                     "Screen Categories"
                 ],
                 "summary": "Update a screen Category",
+                "description": "Updates the current element",
                 "operationId": "updateScreenCategory",
                 "parameters": [
                     {
@@ -2518,6 +2547,7 @@
                     "Screen Categories"
                 ],
                 "summary": "Delete a screen category",
+                "description": "Remove the specified resource from storage.",
                 "operationId": "deleteScreenCategory",
                 "parameters": [
                     {
@@ -2543,6 +2573,7 @@
                     "Screens"
                 ],
                 "summary": "Returns all screens that the user has access to",
+                "description": "Get a list of Screens.",
                 "operationId": "getScreens",
                 "parameters": [
                     {
@@ -2578,14 +2609,12 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Get a list of Screens.",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/screens"
                                             }
                                         },
                                         "meta": {
-                                            "description": "Get a list of Screens.",
                                             "type": "object"
                                         }
                                     },
@@ -2601,6 +2630,7 @@
                     "Screens"
                 ],
                 "summary": "Save a new screens",
+                "description": "Create a new Screen.",
                 "operationId": "createScreen",
                 "requestBody": {
                     "required": true,
@@ -2632,6 +2662,7 @@
                     "Screens"
                 ],
                 "summary": "Get single screens by ID",
+                "description": "Get a single Screen.",
                 "operationId": "getScreensById",
                 "parameters": [
                     {
@@ -2662,6 +2693,7 @@
                     "Screens"
                 ],
                 "summary": "Update a screen",
+                "description": "Update a Screen.",
                 "operationId": "updateScreen",
                 "parameters": [
                     {
@@ -2695,6 +2727,7 @@
                     "Screens"
                 ],
                 "summary": "Delete a screen",
+                "description": "Delete a Screen.",
                 "operationId": "deleteScreen",
                 "parameters": [
                     {
@@ -2720,6 +2753,7 @@
                     "Screens"
                 ],
                 "summary": "duplicate a screen",
+                "description": "duplicate a Screen.",
                 "operationId": "duplicateScreen",
                 "parameters": [
                     {
@@ -2762,6 +2796,7 @@
                     "Screens"
                 ],
                 "summary": "Export a single screen by ID",
+                "description": "Export the specified screen.",
                 "operationId": "exportScreen",
                 "parameters": [
                     {
@@ -2794,6 +2829,7 @@
                     "Screens"
                 ],
                 "summary": "Import a new screen",
+                "description": "Import the specified screen.",
                 "operationId": "importScreen",
                 "requestBody": {
                     "required": true,
@@ -2820,7 +2856,6 @@
                                 "schema": {
                                     "properties": {
                                         "status": {
-                                            "description": "Import the specified screen.",
                                             "type": "object"
                                         }
                                     },
@@ -2838,6 +2873,7 @@
                     "Screens"
                 ],
                 "summary": "Preview a screen",
+                "description": "Get preview a screen",
                 "operationId": "preview",
                 "requestBody": {
                     "required": true,
@@ -2846,19 +2882,15 @@
                             "schema": {
                                 "properties": {
                                     "config": {
-                                        "description": "Get preview a screen",
                                         "type": "object"
                                     },
                                     "watchers": {
-                                        "description": "Get preview a screen",
                                         "type": "object"
                                     },
                                     "computed": {
-                                        "description": "Get preview a screen",
                                         "type": "object"
                                     },
                                     "custom_css": {
-                                        "description": "Get preview a screen",
                                         "type": "string"
                                     }
                                 },
@@ -2887,6 +2919,7 @@
                     "Script Categories"
                 ],
                 "summary": "Returns all scripts categories that the user has access to",
+                "description": "Display a listing of the Script Categories.",
                 "operationId": "getScriptCategories",
                 "parameters": [
                     {
@@ -2915,14 +2948,12 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Display a listing of the Script Categories.",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/ScriptCategory"
                                             }
                                         },
                                         "meta": {
-                                            "description": "Display a listing of the Script Categories.",
                                             "type": "object"
                                         }
                                     },
@@ -2938,6 +2969,7 @@
                     "Script Categories"
                 ],
                 "summary": "Save a new Script Category",
+                "description": "Store a newly created Script Category in storage",
                 "operationId": "createScriptCategory",
                 "requestBody": {
                     "required": true,
@@ -2969,6 +3001,7 @@
                     "Script Categories"
                 ],
                 "summary": "Get single script category by ID",
+                "description": "Display the specified script category.",
                 "operationId": "getScriptCategoryById",
                 "parameters": [
                     {
@@ -2999,6 +3032,7 @@
                     "Script Categories"
                 ],
                 "summary": "Update a script Category",
+                "description": "Updates the current element",
                 "operationId": "updateScriptCategory",
                 "parameters": [
                     {
@@ -3039,6 +3073,7 @@
                     "Script Categories"
                 ],
                 "summary": "Delete a script category",
+                "description": "Remove the specified resource from storage.",
                 "operationId": "deleteScriptCategory",
                 "parameters": [
                     {
@@ -3064,6 +3099,7 @@
                     "Scripts"
                 ],
                 "summary": "Returns all scripts that the user has access to",
+                "description": "Get a list of scripts in a process.",
                 "operationId": "getScripts",
                 "parameters": [
                     {
@@ -3090,14 +3126,12 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Get a list of scripts in a process.",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/scripts"
                                             }
                                         },
                                         "meta": {
-                                            "description": "Get a list of scripts in a process.",
                                             "type": "object"
                                         }
                                     },
@@ -3113,6 +3147,7 @@
                     "Scripts"
                 ],
                 "summary": "Save a new script",
+                "description": "Create a new script in a process.",
                 "operationId": "createScript",
                 "requestBody": {
                     "required": true,
@@ -3144,6 +3179,7 @@
                     "Scripts"
                 ],
                 "summary": "Test script code without saving it",
+                "description": "Previews executing a script, with sample data/config data",
                 "operationId": "previewScript",
                 "parameters": [
                     {
@@ -3161,25 +3197,21 @@
                             "schema": {
                                 "properties": {
                                     "data": {
-                                        "description": "Previews executing a script, with sample data/config data",
                                         "type": "array",
                                         "items": {
                                             "type": "object"
                                         }
                                     },
                                     "config": {
-                                        "description": "Previews executing a script, with sample data/config data",
                                         "type": "array",
                                         "items": {
                                             "type": "object"
                                         }
                                     },
                                     "code": {
-                                        "description": "Previews executing a script, with sample data/config data",
                                         "type": "string"
                                     },
                                     "nonce": {
-                                        "description": "Previews executing a script, with sample data/config data",
                                         "type": "string"
                                     }
                                 },
@@ -3201,6 +3233,7 @@
                     "Scripts"
                 ],
                 "summary": "Execute script",
+                "description": "Executes a script, with sample data/config data",
                 "operationId": "executeScript",
                 "parameters": [
                     {
@@ -3218,14 +3251,12 @@
                             "schema": {
                                 "properties": {
                                     "data": {
-                                        "description": "Executes a script, with sample data/config data",
                                         "type": "array",
                                         "items": {
                                             "type": "object"
                                         }
                                     },
                                     "config": {
-                                        "description": "Executes a script, with sample data/config data",
                                         "type": "array",
                                         "items": {
                                             "type": "object"
@@ -3257,6 +3288,7 @@
                     "Scripts"
                 ],
                 "summary": "Get the response of a script execution by execution key",
+                "description": "Get the response of a script execution",
                 "operationId": "getScriptExecutionResponse",
                 "parameters": [
                     {
@@ -3286,6 +3318,7 @@
                     "Scripts"
                 ],
                 "summary": "Get single script by ID",
+                "description": "Get a single script in a process.",
                 "operationId": "getScriptsById",
                 "parameters": [
                     {
@@ -3316,6 +3349,7 @@
                     "Scripts"
                 ],
                 "summary": "Update a script",
+                "description": "Update a script in a process.",
                 "operationId": "updateScript",
                 "parameters": [
                     {
@@ -3349,6 +3383,7 @@
                     "Scripts"
                 ],
                 "summary": "Delete a script",
+                "description": "Delete a script in a process.",
                 "operationId": "deleteScript",
                 "parameters": [
                     {
@@ -3374,6 +3409,7 @@
                     "Scripts"
                 ],
                 "summary": "duplicate a script",
+                "description": "duplicate a Script.",
                 "operationId": "duplicateScript",
                 "parameters": [
                     {
@@ -3416,6 +3452,7 @@
                     "Tasks"
                 ],
                 "summary": "Returns all tasks that the user has access to",
+                "description": "Display a listing of the resource.",
                 "operationId": "getTasks",
                 "parameters": [
                     {
@@ -3448,7 +3485,6 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Display a listing of the resource.",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/processRequestToken"
@@ -3472,6 +3508,7 @@
                     "Tasks"
                 ],
                 "summary": "Get a single task by ID",
+                "description": "Display the specified resource.",
                 "operationId": "getTasksById",
                 "parameters": [
                     {
@@ -3505,6 +3542,7 @@
                     "Tasks"
                 ],
                 "summary": "Update a task",
+                "description": "Updates the current element",
                 "operationId": "updateTask",
                 "parameters": [
                     {
@@ -3528,12 +3566,10 @@
                                 ],
                                 "properties": {
                                     "status": {
-                                        "description": "Updates the current element",
                                         "type": "string",
                                         "example": "COMPLETED"
                                     },
                                     "data": {
-                                        "description": "Updates the current element",
                                         "type": "object"
                                     }
                                 },
@@ -3568,6 +3604,7 @@
                     "Users"
                 ],
                 "summary": "Returns all users",
+                "description": "Display a listing of the resource.",
                 "operationId": "getUsers",
                 "parameters": [
                     {
@@ -3597,7 +3634,6 @@
                                 "schema": {
                                     "properties": {
                                         "data": {
-                                            "description": "Display a listing of the resource.",
                                             "type": "array",
                                             "items": {
                                                 "$ref": "#/components/schemas/users"
@@ -3619,6 +3655,7 @@
                     "Users"
                 ],
                 "summary": "Save a new users",
+                "description": "Store a newly created resource in storage.",
                 "operationId": "createUser",
                 "requestBody": {
                     "required": true,
@@ -3653,6 +3690,7 @@
                     "Users"
                 ],
                 "summary": "Get single user by ID",
+                "description": "Display the specified resource.",
                 "operationId": "getUserById",
                 "parameters": [
                     {
@@ -3686,6 +3724,7 @@
                     "Users"
                 ],
                 "summary": "Update a user",
+                "description": "Update a user",
                 "operationId": "updateUser",
                 "parameters": [
                     {
@@ -3725,6 +3764,7 @@
                     "Users"
                 ],
                 "summary": "Delete a user",
+                "description": "Delete a user",
                 "operationId": "deleteUser",
                 "parameters": [
                     {
@@ -3818,9 +3858,9 @@
                 "type": "object"
             },
             "updateUserGroups": {
+                "description": "Update a user's groups",
                 "properties": {
                     "groups": {
-                        "description": "Update a user's groups",
                         "type": "array",
                         "items": {
                             "type": "integer",
@@ -3831,6 +3871,7 @@
                 "type": "object"
             },
             "restoreUser": {
+                "description": "Reverses the soft delete of a user",
                 "properties": {
                     "username": {
                         "description": "Username to restore",
@@ -3965,46 +4006,36 @@
             "commentsEditable": {
                 "properties": {
                     "id": {
-                        "description": "Represents a business process definition.",
                         "type": "string",
                         "format": "id"
                     },
                     "user_id": {
-                        "description": "Represents a business process definition.",
                         "type": "string",
                         "format": "id"
                     },
                     "commentable_id": {
-                        "description": "Represents a business process definition.",
                         "type": "string",
                         "format": "id"
                     },
                     "commentable_type": {
-                        "description": "Represents a business process definition.",
                         "type": "string"
                     },
                     "up": {
-                        "description": "Represents a business process definition.",
                         "type": "integer"
                     },
                     "down": {
-                        "description": "Represents a business process definition.",
                         "type": "integer"
                     },
                     "subject": {
-                        "description": "Represents a business process definition.",
                         "type": "string"
                     },
                     "body": {
-                        "description": "Represents a business process definition.",
                         "type": "string"
                     },
                     "hidden": {
-                        "description": "Represents a business process definition.",
                         "type": "boolean"
                     },
                     "type": {
-                        "description": "Represents a business process definition.",
                         "type": "string",
                         "enum": [
                             "LOG",
@@ -4015,22 +4046,23 @@
                 "type": "object"
             },
             "comments": {
-                "properties": {
-                    "created_at": {
-                        "description": "Represents a business process definition.",
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "updated_at": {
-                        "description": "Represents a business process definition.",
-                        "type": "string",
-                        "format": "date-time"
-                    }
-                },
+                "description": "Represents a business process definition.",
                 "type": "object",
                 "allOf": [
                     {
                         "$ref": "#/components/schemas/commentsEditable"
+                    },
+                    {
+                        "properties": {
+                            "created_at": {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            "updated_at": {
+                                "type": "string",
+                                "format": "date-time"
+                            }
+                        }
                     }
                 ]
             },
@@ -4075,15 +4107,12 @@
             "groupsEditable": {
                 "properties": {
                     "name": {
-                        "description": "Represents a group definition.",
                         "type": "string"
                     },
                     "description": {
-                        "description": "Represents a group definition.",
                         "type": "string"
                     },
                     "status": {
-                        "description": "Represents a group definition.",
                         "type": "string",
                         "enum": [
                             "ACTIVE",
@@ -4094,6 +4123,7 @@
                 "type": "object"
             },
             "groups": {
+                "description": "Represents a group definition.",
                 "allOf": [
                     {
                         "$ref": "#/components/schemas/groupsEditable"
@@ -4101,17 +4131,14 @@
                     {
                         "properties": {
                             "created_at": {
-                                "description": "Represents a group definition.",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "updated_at": {
-                                "description": "Represents a group definition.",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "id": {
-                                "description": "Represents a group definition.",
                                 "type": "string",
                                 "format": "id"
                             }
@@ -4123,21 +4150,17 @@
             "groupMembersEditable": {
                 "properties": {
                     "group_id": {
-                        "description": "Represents a group Members definition.",
                         "type": "string",
                         "format": "id"
                     },
                     "member_id": {
-                        "description": "Represents a group Members definition.",
                         "type": "string",
                         "format": "id"
                     },
                     "member_type": {
-                        "description": "Represents a group Members definition.",
                         "type": "string"
                     },
                     "description": {
-                        "description": "Represents a group Members definition.",
                         "type": "string"
                     }
                 },
@@ -4151,17 +4174,14 @@
                     {
                         "properties": {
                             "id": {
-                                "description": "Represents a group Members definition.",
                                 "type": "string",
                                 "format": "id"
                             },
                             "created_at": {
-                                "description": "Represents a group Members definition.",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "updated_at": {
-                                "description": "Represents a group Members definition.",
                                 "type": "string",
                                 "format": "date-time"
                             }
@@ -4178,25 +4198,20 @@
                     {
                         "properties": {
                             "id": {
-                                "description": "Represents a group Members definition.",
                                 "type": "string",
                                 "format": "id"
                             },
                             "group": {
-                                "description": "Represents a group Members definition.",
                                 "type": "object"
                             },
                             "member": {
-                                "description": "Represents a group Members definition.",
                                 "type": "object"
                             },
                             "created_at": {
-                                "description": "Represents a group Members definition.",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "updated_at": {
-                                "description": "Represents a group Members definition.",
                                 "type": "string",
                                 "format": "date-time"
                             }
@@ -4210,31 +4225,25 @@
                     {
                         "properties": {
                             "group_id": {
-                                "description": "Represents a group Members definition.",
                                 "type": "string",
                                 "format": "id"
                             },
                             "member_id": {
-                                "description": "Represents a group Members definition.",
                                 "type": "string",
                                 "format": "id"
                             },
                             "member_type": {
-                                "description": "Represents a group Members definition.",
                                 "type": "string"
                             },
                             "id": {
-                                "description": "Represents a group Members definition.",
                                 "type": "string",
                                 "format": "id"
                             },
                             "created_at": {
-                                "description": "Represents a group Members definition.",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "updated_at": {
-                                "description": "Represents a group Members definition.",
                                 "type": "string",
                                 "format": "date-time"
                             }
@@ -4244,24 +4253,21 @@
                 ]
             },
             "availableGroupMembers": {
+                "description": "Represents a group Members definition.",
                 "allOf": [
                     {
                         "properties": {
                             "id": {
-                                "description": "Represents a group Members definition.",
                                 "type": "string",
                                 "format": "id"
                             },
                             "description": {
-                                "description": "Represents a group Members definition.",
                                 "type": "string"
                             },
                             "name": {
-                                "description": "Represents a group Members definition.",
                                 "type": "string"
                             },
                             "status": {
-                                "description": "Represents a group Members definition.",
                                 "type": "string",
                                 "enum": [
                                     "ACTIVE",
@@ -4269,12 +4275,10 @@
                                 ]
                             },
                             "created_at": {
-                                "description": "Represents a group Members definition.",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "updated_at": {
-                                "description": "Represents a group Members definition.",
                                 "type": "string",
                                 "format": "date-time"
                             }
@@ -4286,87 +4290,74 @@
             "mediaEditable": {
                 "properties": {
                     "id": {
-                        "description": "Represents media files stored in the database",
                         "type": "integer",
                         "format": "id"
                     },
                     "model_id": {
-                        "description": "Represents media files stored in the database",
                         "type": "integer",
                         "format": "id"
                     },
                     "model_type": {
-                        "description": "Represents media files stored in the database",
                         "type": "string",
                         "format": "id"
                     },
                     "collection_name": {
-                        "description": "Represents media files stored in the database",
                         "type": "string"
                     },
                     "name": {
-                        "description": "Represents media files stored in the database",
                         "type": "string"
                     },
                     "file_name": {
-                        "description": "Represents media files stored in the database",
                         "type": "string"
                     },
                     "mime_type": {
-                        "description": "Represents media files stored in the database",
                         "type": "string"
                     },
                     "disk": {
-                        "description": "Represents media files stored in the database",
                         "type": "string"
                     },
                     "size": {
-                        "description": "Represents media files stored in the database",
                         "type": "integer"
                     },
                     "manipulations": {
-                        "description": "Represents media files stored in the database",
                         "type": "object"
                     },
                     "custom_properties": {
-                        "description": "Represents media files stored in the database",
                         "type": "object"
                     },
                     "responsive_images": {
-                        "description": "Represents media files stored in the database",
                         "type": "object"
                     },
                     "order_column": {
-                        "description": "Represents media files stored in the database",
                         "type": "integer"
                     }
                 },
                 "type": "object"
             },
             "media": {
-                "properties": {
-                    "created_at": {
-                        "description": "Represents media files stored in the database",
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "updated_at": {
-                        "description": "Represents media files stored in the database",
-                        "type": "string",
-                        "format": "date-time"
-                    }
-                },
                 "type": "object",
                 "allOf": [
                     {
                         "$ref": "#/components/schemas/mediaEditable"
+                    },
+                    {
+                        "properties": {
+                            "created_at": {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            "updated_at": {
+                                "type": "string",
+                                "format": "date-time"
+                            }
+                        }
                     }
                 ]
             },
             "mediaExported": {
+                "description": "Represents media files stored in the database",
                 "properties": {
                     "url": {
-                        "description": "Represents media files stored in the database",
                         "type": "string"
                     }
                 },
@@ -4375,45 +4366,37 @@
             "NotificationEditable": {
                 "properties": {
                     "type": {
-                        "description": "Represents a notification definition.",
                         "type": "string"
                     },
                     "notifiable_type": {
-                        "description": "Represents a notification definition.",
                         "type": "string"
                     },
                     "notifiable_id": {
-                        "description": "Represents a notification definition.",
                         "type": "integer"
                     },
                     "data": {
-                        "description": "Represents a notification definition.",
                         "type": "string"
                     },
                     "name": {
-                        "description": "Represents a notification definition.",
                         "type": "string"
                     },
                     "message": {
-                        "description": "Represents a notification definition.",
                         "type": "string"
                     },
                     "processName": {
-                        "description": "Represents a notification definition.",
                         "type": "string"
                     },
                     "userName": {
-                        "description": "Represents a notification definition.",
                         "type": "string"
                     },
                     "request_id": {
-                        "description": "Represents a notification definition.",
                         "type": "string"
                     }
                 },
                 "type": "object"
             },
             "Notification": {
+                "description": "Represents a notification definition.",
                 "allOf": [
                     {
                         "$ref": "#/components/schemas/NotificationEditable"
@@ -4421,21 +4404,17 @@
                     {
                         "properties": {
                             "id": {
-                                "description": "Represents a notification definition.",
                                 "type": "string"
                             },
                             "read_at": {
-                                "description": "Represents a notification definition.",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "created_at": {
-                                "description": "Represents a notification definition.",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "updated_at": {
-                                "description": "Represents a notification definition.",
                                 "type": "string",
                                 "format": "date-time"
                             }
@@ -4447,20 +4426,16 @@
             "ProcessEditable": {
                 "properties": {
                     "process_category_id": {
-                        "description": "Represents a business process definition.",
                         "type": "integer",
                         "format": "id"
                     },
                     "name": {
-                        "description": "Represents a business process definition.",
                         "type": "string"
                     },
                     "description": {
-                        "description": "Represents a business process definition.",
                         "type": "string"
                     },
                     "status": {
-                        "description": "Represents a business process definition.",
                         "type": "string",
                         "enum": [
                             "ACTIVE",
@@ -4468,58 +4443,46 @@
                         ]
                     },
                     "pause_timer_start": {
-                        "description": "Represents a business process definition.",
                         "type": "integer"
                     },
                     "cancel_screen_id": {
-                        "description": "Represents a business process definition.",
                         "type": "integer"
                     },
                     "has_timer_start_events": {
-                        "description": "Represents a business process definition.",
                         "type": "boolean"
                     },
                     "request_detail_screen_id": {
-                        "description": "Represents a business process definition.",
                         "type": "integer",
                         "format": "id"
                     },
                     "is_valid": {
-                        "description": "Represents a business process definition.",
                         "type": "integer"
                     },
                     "package_key": {
-                        "description": "Represents a business process definition.",
                         "type": "string"
                     },
                     "start_events": {
-                        "description": "Represents a business process definition.",
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/ProcessStartEvents"
                         }
                     },
                     "warnings": {
-                        "description": "Represents a business process definition.",
                         "type": "string"
                     },
                     "self_service_tasks": {
-                        "description": "Represents a business process definition.",
                         "type": "array",
                         "items": {
                             "type": "object"
                         }
                     },
                     "signal_events": {
-                        "description": "Represents a business process definition.",
                         "type": "array",
                         "items": {
                             "type": "object"
                         }
                     },
-                    "category": {
-                        "description": "Represents a business process definition."
-                    }
+                    "category": {}
                 },
                 "type": "object"
             },
@@ -4531,36 +4494,29 @@
                     {
                         "properties": {
                             "user_id": {
-                                "description": "Represents a business process definition.",
                                 "type": "integer",
                                 "format": "id"
                             },
                             "id": {
-                                "description": "Represents a business process definition.",
                                 "type": "string",
                                 "format": "id"
                             },
                             "deleted_at": {
-                                "description": "Represents a business process definition.",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "created_at": {
-                                "description": "Represents a business process definition.",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "updated_at": {
-                                "description": "Represents a business process definition.",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "notifications": {
-                                "description": "Represents a business process definition.",
                                 "type": "object"
                             },
                             "task_notifications": {
-                                "description": "Represents a business process definition.",
                                 "type": "object"
                             }
                         },
@@ -4577,7 +4533,6 @@
                     {
                         "properties": {
                             "events": {
-                                "description": "Represents a business process definition.",
                                 "type": "array",
                                 "items": {
                                     "$ref": "#/components/schemas/ProcessStartEvents"
@@ -4596,42 +4551,36 @@
                     {
                         "properties": {
                             "status": {
-                                "description": "Represents a business process definition.",
                                 "type": "array",
                                 "items": {
                                     "type": "object"
                                 }
                             },
                             "assignable": {
-                                "description": "Represents a business process definition.",
                                 "type": "array",
                                 "items": {
                                     "type": "object"
                                 }
                             },
-                            "process": {
-                                "description": "Represents a business process definition."
-                            }
+                            "process": {}
                         },
                         "type": "object"
                     }
                 ]
             },
             "ProcessAssignments": {
+                "description": "Represents a business process definition.",
                 "properties": {
                     "assignable": {
-                        "description": "Represents a business process definition.",
                         "type": "array",
                         "items": {
                             "type": "object"
                         }
                     },
                     "cancel_request": {
-                        "description": "Represents a business process definition.",
                         "type": "object"
                     },
                     "edit_data": {
-                        "description": "Represents a business process definition.",
                         "type": "object"
                     }
                 },
@@ -4640,11 +4589,9 @@
             "ProcessCategoryEditable": {
                 "properties": {
                     "name": {
-                        "description": "Represents a business process category definition.",
                         "type": "string"
                     },
                     "status": {
-                        "description": "Represents a business process category definition.",
                         "type": "string",
                         "enum": [
                             "ACTIVE",
@@ -4655,6 +4602,7 @@
                 "type": "object"
             },
             "ProcessCategory": {
+                "description": "Represents a business process category definition.",
                 "allOf": [
                     {
                         "$ref": "#/components/schemas/ProcessCategoryEditable"
@@ -4662,17 +4610,14 @@
                     {
                         "properties": {
                             "id": {
-                                "description": "Represents a business process category definition.",
                                 "type": "string",
                                 "format": "id"
                             },
                             "created_at": {
-                                "description": "Represents a business process category definition.",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "updated_at": {
-                                "description": "Represents a business process category definition.",
                                 "type": "string",
                                 "format": "date-time"
                             }
@@ -4684,70 +4629,62 @@
             "processPermissionsEditable": {
                 "properties": {
                     "id": {
-                        "description": "Represents a Process permission.",
                         "type": "integer",
                         "format": "id"
                     },
                     "process_id": {
-                        "description": "Represents a Process permission.",
                         "type": "integer",
                         "format": "id"
                     },
                     "permission_id": {
-                        "description": "Represents a Process permission.",
                         "type": "integer",
                         "format": "id"
                     },
                     "assignable_id": {
-                        "description": "Represents a Process permission.",
                         "type": "integer",
                         "format": "id"
                     },
                     "assignable_type": {
-                        "description": "Represents a Process permission.",
                         "type": "string"
                     }
                 },
                 "type": "object"
             },
             "processPermissions": {
-                "properties": {
-                    "created_at": {
-                        "description": "Represents a Process permission.",
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "updated_at": {
-                        "description": "Represents a Process permission.",
-                        "type": "string",
-                        "format": "date-time"
-                    }
-                },
+                "description": "Represents a Process permission.",
                 "type": "object",
                 "allOf": [
                     {
                         "$ref": "#/components/schemas/processPermissionsEditable"
+                    },
+                    {
+                        "properties": {
+                            "created_at": {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            "updated_at": {
+                                "type": "string",
+                                "format": "date-time"
+                            }
+                        }
                     }
                 ]
             },
             "processRequestEditable": {
                 "properties": {
                     "user_id": {
-                        "description": "Represents an Eloquent model of a Request which is an instance of a Process.",
                         "type": "string",
                         "format": "id"
                     },
                     "callable_id": {
-                        "description": "Represents an Eloquent model of a Request which is an instance of a Process.",
                         "type": "string",
                         "format": "id"
                     },
                     "data": {
-                        "description": "Represents an Eloquent model of a Request which is an instance of a Process.",
                         "type": "object"
                     },
                     "status": {
-                        "description": "Represents an Eloquent model of a Request which is an instance of a Process.",
                         "type": "string",
                         "enum": [
                             "ACTIVE",
@@ -4757,21 +4694,19 @@
                         ]
                     },
                     "name": {
-                        "description": "Represents an Eloquent model of a Request which is an instance of a Process.",
                         "type": "string"
                     },
                     "process_id": {
-                        "description": "Represents an Eloquent model of a Request which is an instance of a Process.",
                         "type": "integer"
                     },
                     "process": {
-                        "description": "Represents an Eloquent model of a Request which is an instance of a Process.",
                         "type": "object"
                     }
                 },
                 "type": "object"
             },
             "processRequest": {
+                "description": "Represents an Eloquent model of a Request which is an instance of a Process.",
                 "allOf": [
                     {
                         "$ref": "#/components/schemas/processRequestEditable"
@@ -4779,45 +4714,35 @@
                     {
                         "properties": {
                             "id": {
-                                "description": "Represents an Eloquent model of a Request which is an instance of a Process.",
                                 "type": "string",
                                 "format": "id"
                             },
                             "process_id": {
-                                "description": "Represents an Eloquent model of a Request which is an instance of a Process.",
                                 "type": "string",
                                 "format": "id"
                             },
                             "process_collaboration_id": {
-                                "description": "Represents an Eloquent model of a Request which is an instance of a Process.",
                                 "type": "string",
                                 "format": "id"
                             },
                             "participant_id": {
-                                "description": "Represents an Eloquent model of a Request which is an instance of a Process.",
                                 "type": "string",
                                 "format": "id"
                             },
                             "process_category_id": {
-                                "description": "Represents an Eloquent model of a Request which is an instance of a Process.",
                                 "type": "string",
                                 "format": "id"
                             },
                             "created_at": {
-                                "description": "Represents an Eloquent model of a Request which is an instance of a Process.",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "updated_at": {
-                                "description": "Represents an Eloquent model of a Request which is an instance of a Process.",
                                 "type": "string",
                                 "format": "date-time"
                             },
-                            "user": {
-                                "description": "Represents an Eloquent model of a Request which is an instance of a Process."
-                            },
+                            "user": {},
                             "participants": {
-                                "description": "Represents an Eloquent model of a Request which is an instance of a Process.",
                                 "type": "array",
                                 "items": {
                                     "$ref": "#/components/schemas/users"
@@ -4831,40 +4756,34 @@
             "processRequestTokenEditable": {
                 "properties": {
                     "user_id": {
-                        "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                         "type": "string",
                         "format": "id"
                     },
                     "status": {
-                        "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                         "type": "string"
                     },
                     "due_at": {
-                        "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                         "type": "date-time"
                     },
                     "initiated_at": {
-                        "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                         "type": "string",
                         "format": "date-time"
                     },
                     "riskchanges_at": {
-                        "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                         "type": "string",
                         "format": "date-time"
                     },
                     "subprocess_start_event_id": {
-                        "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                         "type": "string"
                     },
                     "data": {
-                        "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                         "type": "object"
                     }
                 },
                 "type": "object"
             },
             "processRequestToken": {
+                "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                 "allOf": [
                     {
                         "$ref": "#/components/schemas/processRequestTokenEditable"
@@ -4872,70 +4791,52 @@
                     {
                         "properties": {
                             "id": {
-                                "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                                 "type": "string",
                                 "format": "id"
                             },
                             "process_id": {
-                                "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                                 "type": "string",
                                 "format": "id"
                             },
                             "process_request_id": {
-                                "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                                 "type": "string",
                                 "format": "id"
                             },
                             "element_id": {
-                                "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                                 "type": "string",
                                 "format": "id"
                             },
                             "element_type": {
-                                "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                                 "type": "string",
                                 "format": "id"
                             },
                             "element_index": {
-                                "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                                 "type": "string"
                             },
                             "element_name": {
-                                "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                                 "type": "string"
                             },
                             "created_at": {
-                                "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "updated_at": {
-                                "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "initiated_at": {
-                                "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "advanceStatus": {
-                                "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                                 "type": "string"
                             },
                             "due_notified": {
-                                "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine",
                                 "type": "integer"
                             },
-                            "user": {
-                                "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine"
-                            },
-                            "process": {
-                                "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine"
-                            },
-                            "process_request": {
-                                "description": "ProcessRequestToken is used to store the state of a token of the\nNayra engine"
-                            }
+                            "user": {},
+                            "process": {},
+                            "process_request": {}
                         },
                         "type": "object"
                     }
@@ -4944,22 +4845,18 @@
             "taskAssignmentsEditable": {
                 "properties": {
                     "process_id": {
-                        "description": "Represents a business process task assignment definition.",
                         "type": "string",
                         "format": "id"
                     },
                     "process_task_id": {
-                        "description": "Represents a business process task assignment definition.",
                         "type": "string",
                         "format": "id"
                     },
                     "assignment_id": {
-                        "description": "Represents a business process task assignment definition.",
                         "type": "string",
                         "format": "id"
                     },
                     "assignment_type": {
-                        "description": "Represents a business process task assignment definition.",
                         "type": "string",
                         "enum": [
                             "ProcessMaker\\Models\\User",
@@ -4970,71 +4867,63 @@
                 "type": "object"
             },
             "taskAssignments": {
-                "properties": {
-                    "id": {
-                        "description": "Represents a business process task assignment definition.",
-                        "type": "string",
-                        "format": "id"
-                    },
-                    "created_at": {
-                        "description": "Represents a business process task assignment definition.",
-                        "type": "string",
-                        "format": "date-time"
-                    },
-                    "updated_at": {
-                        "description": "Represents a business process task assignment definition.",
-                        "type": "string",
-                        "format": "date-time"
-                    }
-                },
+                "description": "Represents a business process task assignment definition.",
                 "type": "object",
                 "allOf": [
                     {
                         "$ref": "#/components/schemas/taskAssignmentsEditable"
+                    },
+                    {
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "format": "id"
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            "updated_at": {
+                                "type": "string",
+                                "format": "date-time"
+                            }
+                        }
                     }
                 ]
             },
             "screensEditable": {
                 "properties": {
                     "title": {
-                        "description": "Class Screen",
                         "type": "string"
                     },
                     "type": {
-                        "description": "Class Screen",
                         "type": "string"
                     },
                     "description": {
-                        "description": "Class Screen",
                         "type": "string"
                     },
                     "config": {
-                        "description": "Class Screen",
                         "type": "array",
                         "items": {
                             "type": "object"
                         }
                     },
                     "computed": {
-                        "description": "Class Screen",
                         "type": "array",
                         "items": {
                             "type": "object"
                         }
                     },
                     "watchers": {
-                        "description": "Class Screen",
                         "type": "array",
                         "items": {
                             "type": "object"
                         }
                     },
                     "custom_css": {
-                        "description": "Class Screen",
                         "type": "string"
                     },
                     "screen_category_id": {
-                        "description": "Class Screen",
                         "type": "string"
                     }
                 },
@@ -5048,17 +4937,14 @@
                     {
                         "properties": {
                             "id": {
-                                "description": "Class Screen",
                                 "type": "string",
                                 "format": "id"
                             },
                             "created_at": {
-                                "description": "Class Screen",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "updated_at": {
-                                "description": "Class Screen",
                                 "type": "string",
                                 "format": "date-time"
                             }
@@ -5068,9 +4954,9 @@
                 ]
             },
             "screenExported": {
+                "description": "Class Screen",
                 "properties": {
                     "url": {
-                        "description": "Class Screen",
                         "type": "string"
                     }
                 },
@@ -5079,11 +4965,9 @@
             "ScreenCategoryEditable": {
                 "properties": {
                     "name": {
-                        "description": "Represents a business screen category definition.",
                         "type": "string"
                     },
                     "status": {
-                        "description": "Represents a business screen category definition.",
                         "type": "string",
                         "enum": [
                             "ACTIVE",
@@ -5094,6 +4978,7 @@
                 "type": "object"
             },
             "ScreenCategory": {
+                "description": "Represents a business screen category definition.",
                 "allOf": [
                     {
                         "$ref": "#/components/schemas/ScreenCategoryEditable"
@@ -5101,17 +4986,14 @@
                     {
                         "properties": {
                             "id": {
-                                "description": "Represents a business screen category definition.",
                                 "type": "string",
                                 "format": "id"
                             },
                             "created_at": {
-                                "description": "Represents a business screen category definition.",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "updated_at": {
-                                "description": "Represents a business screen category definition.",
                                 "type": "string",
                                 "format": "date-time"
                             }
@@ -5123,13 +5005,13 @@
             "ScreenTypeEditable": {
                 "properties": {
                     "name": {
-                        "description": "Represents a business screen Type definition.",
                         "type": "string"
                     }
                 },
                 "type": "object"
             },
             "ScreenType": {
+                "description": "Represents a business screen Type definition.",
                 "allOf": [
                     {
                         "$ref": "#/components/schemas/ScreenTypeEditable"
@@ -5137,7 +5019,6 @@
                     {
                         "properties": {
                             "id": {
-                                "description": "Represents a business screen Type definition.",
                                 "type": "string",
                                 "format": "id"
                             }
@@ -5149,35 +5030,27 @@
             "scriptsEditable": {
                 "properties": {
                     "title": {
-                        "description": "Represents an Eloquent model of a Script",
                         "type": "string"
                     },
                     "description": {
-                        "description": "Represents an Eloquent model of a Script",
                         "type": "string"
                     },
                     "language": {
-                        "description": "Represents an Eloquent model of a Script",
                         "type": "string"
                     },
                     "code": {
-                        "description": "Represents an Eloquent model of a Script",
                         "type": "string"
                     },
                     "timeout": {
-                        "description": "Represents an Eloquent model of a Script",
                         "type": "integer"
                     },
                     "run_as_user_id": {
-                        "description": "Represents an Eloquent model of a Script",
                         "type": "integer"
                     },
                     "key": {
-                        "description": "Represents an Eloquent model of a Script",
                         "type": "string"
                     },
                     "script_category_id": {
-                        "description": "Represents an Eloquent model of a Script",
                         "type": "integer"
                     }
                 },
@@ -5191,17 +5064,14 @@
                     {
                         "properties": {
                             "id": {
-                                "description": "Represents an Eloquent model of a Script",
                                 "type": "integer",
                                 "format": "id"
                             },
                             "created_at": {
-                                "description": "Represents an Eloquent model of a Script",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "updated_at": {
-                                "description": "Represents an Eloquent model of a Script",
                                 "type": "string",
                                 "format": "date-time"
                             }
@@ -5211,13 +5081,12 @@
                 ]
             },
             "scriptsPreview": {
+                "description": "Represents an Eloquent model of a Script",
                 "properties": {
                     "status": {
-                        "description": "Represents an Eloquent model of a Script",
                         "type": "string"
                     },
                     "key": {
-                        "description": "Represents an Eloquent model of a Script",
                         "type": "string"
                     }
                 },
@@ -5226,11 +5095,9 @@
             "ScriptCategoryEditable": {
                 "properties": {
                     "name": {
-                        "description": "Represents a business script category definition.",
                         "type": "string"
                     },
                     "status": {
-                        "description": "Represents a business script category definition.",
                         "type": "string",
                         "enum": [
                             "ACTIVE",
@@ -5241,6 +5108,7 @@
                 "type": "object"
             },
             "ScriptCategory": {
+                "description": "Represents a business script category definition.",
                 "allOf": [
                     {
                         "$ref": "#/components/schemas/ScriptCategoryEditable"
@@ -5248,17 +5116,14 @@
                     {
                         "properties": {
                             "id": {
-                                "description": "Represents a business script category definition.",
                                 "type": "string",
                                 "format": "id"
                             },
                             "created_at": {
-                                "description": "Represents a business script category definition.",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "updated_at": {
-                                "description": "Represents a business script category definition.",
                                 "type": "string",
                                 "format": "date-time"
                             }
@@ -5270,28 +5135,25 @@
             "settingsEditable": {
                 "properties": {
                     "key": {
-                        "description": "Class Settings",
                         "type": "string"
                     },
                     "config": {
-                        "description": "Class Settings",
                         "type": "array",
                         "items": {
                             "type": "object"
                         }
                     },
                     "variables": {
-                        "description": "Class Settings",
                         "type": "string"
                     },
                     "sansSerifFont": {
-                        "description": "Class Settings",
                         "type": "string"
                     }
                 },
                 "type": "object"
             },
             "settings": {
+                "description": "Class Settings",
                 "allOf": [
                     {
                         "$ref": "#/components/schemas/settingsEditable"
@@ -5299,17 +5161,14 @@
                     {
                         "properties": {
                             "id": {
-                                "description": "Class Settings",
                                 "type": "string",
                                 "format": "id"
                             },
                             "created_at": {
-                                "description": "Class Settings",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "updated_at": {
-                                "description": "Class Settings",
                                 "type": "string",
                                 "format": "date-time"
                             }
@@ -5321,92 +5180,70 @@
             "usersEditable": {
                 "properties": {
                     "email": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string",
                         "format": "email"
                     },
                     "firstname": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "lastname": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "username": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "password": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "address": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "city": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "state": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "postal": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "country": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "phone": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "fax": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "cell": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "title": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "timezone": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "datetime_format": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "language": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "is_administrator": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "boolean"
                     },
                     "expires_at": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "loggedin_at": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "remember_token": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "status": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string",
                         "enum": [
                             "ACTIVE",
@@ -5414,22 +5251,18 @@
                         ]
                     },
                     "fullname": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "avatar": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string"
                     },
                     "media": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "array",
                         "items": {
                             "$ref": "#/components/schemas/media"
                         }
                     },
                     "birthdate": {
-                        "description": "The attributes that are mass assignable.",
                         "type": "string",
                         "format": "date"
                     }
@@ -5437,6 +5270,7 @@
                 "type": "object"
             },
             "users": {
+                "description": "The attributes that are mass assignable.",
                 "allOf": [
                     {
                         "$ref": "#/components/schemas/usersEditable"
@@ -5444,21 +5278,17 @@
                     {
                         "properties": {
                             "id": {
-                                "description": "The attributes that are mass assignable.",
                                 "type": "integer"
                             },
                             "created_at": {
-                                "description": "The attributes that are mass assignable.",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "updated_at": {
-                                "description": "The attributes that are mass assignable.",
                                 "type": "string",
                                 "format": "date-time"
                             },
                             "deleted_at": {
-                                "description": "The attributes that are mass assignable.",
                                 "type": "string",
                                 "format": "date-time"
                             }
